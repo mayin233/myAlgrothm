@@ -22,15 +22,15 @@ public class LeetCode15_3sum {
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length; i++) {
-            int j = i + 1;
+            int t = i + 1;
             int k = nums.length - 1;
-            while (j < k) {
-                if (nums[i] + nums[j] + nums[k] == 0) {
-                    set.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                    j++;
+            while (t < k) {
+                if (nums[i] + nums[t] + nums[k] == 0) {
+                    set.add(Arrays.asList(nums[i], nums[t], nums[k]));
+                    t++;
                     k--;
-                } else if (nums[i] + nums[j] + nums[k] < 0) { // 小于0，说明值小了，j向右移动
-                    j++;
+                } else if (nums[i] + nums[t] + nums[k] < 0) { // 小于0，说明值小了，j向右移动
+                    t++;
                 } else { // 值大了，k向左移动
                     k--;
                 }
